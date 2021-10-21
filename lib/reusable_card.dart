@@ -1,23 +1,35 @@
 import 'package:flutter/material.dart';
 
-const _margins = 15.0;
-const _borderRadius = 10.0;
+const _cardMargins = 15.0;
+const _cardBorderRadius = 10.0;
 
 class ReusableCard extends StatelessWidget {
-  ReusableCard({@required this.color, this.cardChild});
+  ReusableCard({@required this.color, this.cardChild, this.onTap});
 
   final Color color;
   final Widget cardChild;
+  final Function onTap;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: cardChild,
-      margin: EdgeInsets.all(_margins),
-      decoration: BoxDecoration(
-        color: color,
-        borderRadius: BorderRadius.circular(_borderRadius),
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        child: cardChild,
+        margin: EdgeInsets.all(_cardMargins),
+        decoration: BoxDecoration(
+          color: color,
+          borderRadius: BorderRadius.circular(_cardBorderRadius),
+        ),
       ),
     );
   }
 }
+
+// child: GestureDetector(
+// onTap: () {
+// setState(() {
+// selectedSex = Sex.male;
+// });
+// },
+// child:
