@@ -5,7 +5,7 @@ const _cardIconSize = 80.0;
 const _sizedBoxSize = 15.0;
 
 class CardIcon extends StatelessWidget {
-  CardIcon({@required this.textData, this.icon});
+  CardIcon({required this.textData, required this.icon});
 
   final IconData icon;
   final String textData;
